@@ -1,0 +1,3 @@
+A webcam photo sharing app that captures a photo from the screen and shares it to the cloud. 
+You can get a link to see the foto and share it. There is a log in screen to validate user credentials.
+
