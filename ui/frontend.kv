@@ -1,0 +1,89 @@
+<StartScreen>:
+    GridLayout:
+        cols: 1
+        padding: 20
+        spacing: 10
+
+        Image:
+            id: welcome_image
+            source: "assets/picture.jpg"
+            size_hint_y: 0.8
+        
+        Button:
+            id: start_button
+            text: "Start App"
+            size_hint_y: 0.2
+            on_press: root.start_camera()
+
+
+<CameraScreen>:
+    GridLayout:
+        cols: 1
+        padding: 20
+        spacing: 10
+
+        Camera:
+            id: webcam
+            resolution: (640, 488)
+            play: True
+            size_hint_y: 0.8
+        
+        Button:
+            id: camera_button
+            text: "Stop Camera"
+            size_hint_y: 0.1
+            on_press: root.start_camera() if root.ids.webcam.play == False else root.stop_camera()
+
+        Button:
+            id: capture_button
+            text: "Capture"
+            size_hint_y: 0.1
+            on_press: root.capture()
+
+<ImageScreen>:
+    GridLayout:
+        cols: 1
+        
+        Image:
+            id: current_picture
+
+        GridLayout:
+            cols: 2
+
+            Button:
+                id: create_link_button
+                text: "Create Link"
+
+            Button:
+                id: reset_button
+                text: "Take Another Photo"
+                on_press: root.reset()
+
+        Label:
+            text: ""
+            size_hint_y: 0.1
+
+        GridLayout:
+            cols: 2
+
+            Button:
+                id: copy_link_button
+                text: "Copy Link"
+
+            Button:
+                id: share_link_button
+                text: "Share Link"
+
+
+<RootWidget>:
+    StartScreen:
+        id: start_screen
+        name: "start_screen"
+    
+    CameraScreen:
+        id: camera_screen
+        name: "camera_screen"
+
+    ImageScreen:
+        id: image_screen
+        name: "image_screen"
