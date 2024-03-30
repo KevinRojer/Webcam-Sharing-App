@@ -1,15 +1,10 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
-from src.screens import FirstScreen
+from ui.user_interface import RootWidget
 
 
-Builder.load_file("./src/frontend.kv")
-
-
-class RootWidget(ScreenManager):
-    pass
-
+Builder.load_file("./ui/frontend.kv")
 
 class MainApp(App):
 
