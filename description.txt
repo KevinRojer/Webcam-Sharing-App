@@ -1,3 +1,3 @@
-A webcam photo sharing app that captures a photo from the screen and shares it to the cloud. 
-You can get a link to see the foto and share it. There is a log in screen to validate user credentials.
-
+Title: Webcam Photo Sharer
+Description: An app that starts the computer webcam, let's the user
+capture a photo, uploads the photo to the cloud/web, and creates a sharable link.
