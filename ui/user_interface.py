@@ -30,6 +30,7 @@ class CameraScreen(Screen):
         image_path = f"assets/{current_time}.png"
         self.ids.webcam.export_to_png(image_path)
         self.manager.current = "image_screen"
+        self.manager.current_screen.ids.current_image.source = image_path
 
 
 class ImageScreen(Screen):
