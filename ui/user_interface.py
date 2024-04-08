@@ -35,11 +35,8 @@ class CameraScreen(Screen):
 
 class ImageScreen(Screen):
 
-    def get_last_picture(self):
-        pass
-
     def create_link(self):
-        pass
+        
 
     def copy_link(self):
         pass
