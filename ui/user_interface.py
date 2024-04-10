@@ -1,4 +1,5 @@
 from kivy.uix.screenmanager import ScreenManager, Screen
+from cloud.services.image_uploader import FileSharer
 import time
 
 class RootWidget(ScreenManager):
@@ -36,7 +37,10 @@ class CameraScreen(Screen):
 class ImageScreen(Screen):
 
     def create_link(self):
-        
+        file_path = self.manager.current_screen.ids.current_image.source
+        file_sharer = FileSharer(file_path, "api-key")
+        url = file_sharer.share()
+        self.ids.link.text = url
 
     def copy_link(self):
         pass
